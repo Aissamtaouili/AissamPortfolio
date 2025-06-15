@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ServiceCard from "./Skills.jsx";
+import { supabase } from "../supabaseClient.js"; // Adjust path if necessary
 
-// Example SVG Icons (replace with your actual icons)
+// --- Icon Components ---
+// It's good practice to keep these defined or imported at the top.
 const WebDesignIcon = () => (
   <svg
-    /* ...props */ className="h-12 w-12 text-blue-500"
+    className="h-12 w-12 text-blue-500"
     fill="none"
     viewBox="0 0 24 24"
     stroke="currentColor"
@@ -93,62 +95,57 @@ const MarketingIcon = () => (
   </svg>
 );
 
-const servicesData = [
-  {
-    icon: <WebDesignIcon />,
-    title: "Web design",
-    description:
-      "“It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.”",
-  },
-  {
-    icon: <WebDevIcon />,
-    title: "Web development",
-    description:
-      "If you are an entrepreneur, you know that your success cannot depend on the opinions of others. Like the wind, opinions.",
-  },
-  {
-    icon: <SocialMediaIcon />,
-    title: "Social Media",
-    description:
-      "Do you want to be even more successful? Learn to love learning and growth. The more effort you put into improving your skills.",
-  },
-  {
-    icon: <BrandingIcon />,
-    title: "Branding",
-    description:
-      "Hypnosis quit smoking methods maintain caused quite a stir in the medical world over the last two decades. There is a lot of argument.",
-  },
-  {
-    icon: <IllustrationIcon />,
-    title: "Illustration",
-    description:
-      "Do you sometimes have the feeling that you're running into the same obstacles over and over again? Many of my conflicts.",
-  },
-  {
-    icon: <MarketingIcon />,
-    title: "Marketing",
-    description:
-      "You’ve heard the expression, “Just believe it and it will come.” Well, technically, that is true, however, ‘believing’ is not just thinking that.",
-  },
-];
+// --- Icon Mapper ---
+// This object maps the string from the database to the actual icon component.
+const iconMap = {
+  web_design: <WebDesignIcon />,
+  web_development: <WebDevIcon />,
+  social_media: <SocialMediaIcon />,
+  branding: <BrandingIcon />,
+  illustration: <IllustrationIcon />,
+  marketing: <MarketingIcon />,
+};
 
 function SkillsGrid() {
+  const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchSkills = async () => {
+      setLoading(true);
+      const { data, error } = await supabase.from("skills").select("*");
+
+      if (error) {
+        console.error("Error fetching skills:", error);
+      } else {
+        setServices(data);
+      }
+      setLoading(false);
+    };
+
+    fetchSkills();
+  }, []);
+
   return (
     <section className="max-w-7xl mx-auto p-5 flex flex-col items-center justify-center gap-8 bg-gray-100 dark:bg-gray-800/50 rounded-xl shadow-lg my-10">
-      <h3 className="text-3xl font-extrabold text-center  tracking-wide text-white">
+      <h3 className="text-3xl font-extrabold text-center tracking-wide text-white">
         SKILLS
       </h3>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-          {servicesData.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <p className="text-white">Loading skills...</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <ServiceCard
+                key={service.id}
+                icon={iconMap[service.icon_name]} // Use the mapper here
+                title={service.title}
+                description={service.description}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

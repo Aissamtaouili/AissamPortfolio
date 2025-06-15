@@ -2,7 +2,7 @@ import React from "react";
 import Banner from "../components/Banner.jsx";
 import About from "./About.jsx";
 import Technologies from "./Technologies.jsx";
-import SkillsGrid from "../components/skillsGrid.jsx";
+import SkillsGrid from "./SkillsGrid.jsx";
 import ParticleAnimation from "./ParticleAnimation.jsx";
 function Home() {
   return (
