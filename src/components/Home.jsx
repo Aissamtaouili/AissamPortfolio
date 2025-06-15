@@ -19,8 +19,3 @@ function Home() {
 }
 
 export default Home;
-
-// Add this to your global CSS (e.g., index.css or App.css)
-/*
-
-*/
