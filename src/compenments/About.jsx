@@ -30,13 +30,6 @@ function About() {
             Engineering at ENSA Tangier, driven by a passion for turning complex
             problems into elegant, functional software.
           </p>
-
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            Now, I apply that same systematic approach to the world of software.
-            I don't just write code; I architect solutions. I find deep
-            satisfaction in building robust back-end systems and pairing them
-            with intuitive, user-friendly front-end experiences.
-          </p>
         </div>
       </div>
     </div>
