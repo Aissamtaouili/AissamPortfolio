@@ -3,8 +3,6 @@ import backgroundpic from "../assets/background.png"; // Adjust path if necessar
 
 const Banner = () => {
   return (
-    // 1. Main container is now a flexbox to center content
-    // 2. The background image is applied directly here via inline style
     <div
       className="relative flex h-screen min-h-[600px] w-full items-center justify-center overflow-hidden text-center text-white"
       style={{
