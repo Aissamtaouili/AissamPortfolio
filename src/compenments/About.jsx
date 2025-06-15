@@ -28,7 +28,7 @@ function About() {
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             I'm a full-stack developer and a Master's candidate in Computer
             Engineering at ENSA Tangier, driven by a passion for turning complex
-            problems into elegant, functional software.
+            problems into elegant, functional software. hello
           </p>
         </div>
       </div>
