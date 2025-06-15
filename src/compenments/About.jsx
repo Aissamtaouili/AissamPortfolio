@@ -30,16 +30,7 @@ function About() {
             Engineering at ENSA Tangier, driven by a passion for turning complex
             problems into elegant, functional software.
           </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-            My journey into tech is grounded in the world of industrial
-            engineering. For over two years as a Process Technician at Lear
-            Corporation, I was on the front lines of launching new projects,
-            where I learned to deconstruct complex systems, manage technical
-            documentation, and ensure every detail was perfect before
-            production. This experience taught me a valuable lesson: every great
-            product, whether physical or digital, relies on a solid,
-            well-documented, and scalable foundation.
-          </p>
+
           <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             Now, I apply that same systematic approach to the world of software.
             I don't just write code; I architect solutions. I find deep
