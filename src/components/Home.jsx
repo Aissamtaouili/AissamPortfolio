@@ -2,8 +2,8 @@ import React from "react";
 import Banner from "../components/Banner.jsx";
 import About from "./About.jsx";
 import Technologies from "./Technologies.jsx";
-import SkillsGrid from "./SkillsGrid.jsx";
 import ParticleAnimation from "./ParticleAnimation.jsx";
+
 function Home() {
   return (
     <div className="relative min-h-screen text-zinc-100 overflow-hidden">
@@ -13,7 +13,6 @@ function Home() {
       <Banner />
       <About />
       <Technologies />
-      <SkillsGrid />
     </div>
   );
 }
