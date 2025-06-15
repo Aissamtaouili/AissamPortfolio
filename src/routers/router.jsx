@@ -1,7 +1,7 @@
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Header from "../compenments/Header.jsx";
-import Footer from "../compenments/Footer.jsx";
-import Home from "../compenments/Home.jsx";
+import Header from "../components/Header.jsx";
+import Footer from "../components/Footer.jsx";
+import Home from "../components/Home.jsx";
 
 export const router = createBrowserRouter([
   {

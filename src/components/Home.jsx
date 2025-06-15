@@ -1,8 +1,8 @@
 import React from "react";
-import Banner from "../compenments/Banner.jsx";
+import Banner from "../components/Banner.jsx";
 import About from "./About.jsx";
 import Technologies from "./Technologies.jsx";
-import SkillsGrid from "../compenments/skillsGrid.jsx";
+import SkillsGrid from "../components/skillsGrid.jsx";
 import ParticleAnimation from "./ParticleAnimation.jsx";
 function Home() {
   return (
