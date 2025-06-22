@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../components/Banner.jsx";
 import About from "./About.jsx";
+import SkillsGrid from "./SkillsGrid.jsx";
 import Technologies from "./Technologies.jsx";
 import ParticleAnimation from "./ParticleAnimation.jsx";
 
@@ -13,6 +14,7 @@ function Home() {
       <Banner />
       <About />
       <Technologies />
+      <SkillsGrid />
     </div>
   );
 }
