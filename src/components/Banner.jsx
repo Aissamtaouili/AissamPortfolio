@@ -1,6 +1,7 @@
 import React from "react";
 import backgroundpic from "../assets/background.png"; // Adjust path if necessary
-
+import ParticleAnimation from "./ParticleAnimation.jsx";
+<ParticleAnimation />;
 const Banner = () => {
   return (
     <div

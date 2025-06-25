@@ -4,7 +4,7 @@ import About from "./About.jsx";
 import SkillsGrid from "./SkillsGrid.jsx";
 import Technologies from "./Technologies.jsx";
 import ParticleAnimation from "./ParticleAnimation.jsx";
-
+import ContactSection from "./ContactSection.jsx";
 function Home() {
   return (
     <div className="relative min-h-screen text-zinc-100 overflow-hidden">
@@ -15,6 +15,7 @@ function Home() {
       <About />
       <Technologies />
       <SkillsGrid />
+      <ContactSection />
     </div>
   );
 }
